@@ -10,10 +10,11 @@
 	</parent>
 	<groupId>com.arcadia</groupId>
 	<artifactId>api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>api</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
+		<start-class>com.arcadia.api</start-class>
 		<java.version>17</java.version>
 	</properties>
 	<repositories>
@@ -48,12 +49,22 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
+        	<plugins>
+            		<plugin>
+                		<groupId>org.springframework.boot</groupId>
+                		<artifactId>spring-boot-maven-plugin</artifactId>
+                		<configuration>
+                    			<fork>true</fork>
+                    			<mainClass>${start-class}</mainClass>
+                		</configuration>
+                		<executions>
+                    			<execution>
+                        			<goals>
+                            				<goal>repackage</goal>
+                        			</goals>
+                    			</execution>
+                		</executions>
+            		</plugin>
+        	</plugins>
+    </build>
 </project>
