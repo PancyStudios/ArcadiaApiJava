@@ -14,7 +14,7 @@
 	<name>api</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<start-class>com.arcadia.api</start-class>
+		<start-class>com.arcadia.api.ApiApplication</start-class>
 		<java.version>17</java.version>
 	</properties>
 	<repositories>
